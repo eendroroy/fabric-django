@@ -1,0 +1,17 @@
+# /etc/systemd/system/emperor.service
+
+[Unit]
+Description=uWSGI Emperor
+After=syslog.target
+
+[Service]
+ExecStart={{ env.venv }}/bin/uwsgi --emperor /etc/uwsgi/apps-enabled/ --logto /var/log/uwsgi.log --master
+RuntimeDirectory=uwsgi
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

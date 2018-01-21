@@ -1,0 +1,8 @@
+{{env.user}} ALL=NOPASSWD:/bin/ln -nfs {{env.directory}}/* /etc/systemd/system/*
+{{env.user}} ALL=NOPASSWD:/bin/ln -nfs {{env.directory}}/* /etc/uwsgi/apps-enabled/*
+{{env.user}} ALL=NOPASSWD:/bin/ln -nfs {{env.directory}}/* /etc/nginx/sites-enabled/*
+{{env.user}} ALL=NOPASSWD:/bin/ln -nfs {{env.directory}}/* /etc/nginx/uwsgi_params
+{{env.user}} ALL=NOPASSWD:/usr/sbin/service nginx *
+{{env.user}} ALL=NOPASSWD:/usr/sbin/service emperor *
+{{env.user}} ALL=NOPASSWD:/usr/local/pyenv/bin/pyenv *
+{{env.user}} ALL=NOPASSWD:/bin/systemctl *

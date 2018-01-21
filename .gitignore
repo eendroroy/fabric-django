@@ -1,0 +1,38 @@
+*~
+.DS_Store
+
+## auto environment files
+.env
+.out
+.env.in
+.env.out
+
+## python version file
+.python-version
+
+## virtualenv
+venv/
+
+## ide settings
+.idea
+
+db.sqlite3
+/log/*
+!/log/.keep
+guideline_files/*
+!guideline_files/default.json
+
+## coverage file
+.coverage
+
+## python dist files
+build/
+dist/
+**.egg-info
+*.pyc
+**/__pycache__
+
+## vagrant
+.vagrant/
+*.log
+vagrant_deploy_key

@@ -1,0 +1,17 @@
+# /etc/uwsgi/apps-enabled/{{ env.app_name }}.ini
+
+[uwsgi]
+uid = {{ env.user }}
+gid = {{ env.user }}
+chdir = {{ env.current_path }}
+home = {{ env.current_path }}
+module = {{ env.app_name }}.wsgi
+binary-path = uwsgi
+master = true
+processes = 5
+threads = 1
+vacuum = true
+socket = {{ env.socket }}
+chmod-socket = 777
+chown-socket = {{ env.user }}:{{ env.user }}
+virtualenv = {{ env.venv }}

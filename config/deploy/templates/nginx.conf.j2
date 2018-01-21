@@ -1,0 +1,20 @@
+# /etc/nginx/sites-enabled/{{ env.app_name }}_nginx.conf
+
+upstream django {
+    server unix://{{ env.socket }};
+}
+
+server {
+    listen      {{ env.app_port }};
+
+    server_name {{ ' '.join(env.hosts) }};
+
+    sendfile        on;
+    client_max_body_size 75M;
+    keepalive_timeout  60;
+
+    location / {
+        uwsgi_pass  django;
+        include     /etc/nginx/uwsgi_params;
+    }
+}
