@@ -5,7 +5,7 @@ from config.fabric.create_symlinks import __create_symlinks
 from config.fabric.upload_config import __upload_configs
 
 
-def task_setup():
+def __task_setup():
     __create_paths()
     __upload_configs()
     __create_symlinks()

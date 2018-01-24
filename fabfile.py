@@ -1,9 +1,11 @@
 from fabric.state import env
 
 from config.fabric.fabric_init import __fabric_init
-from config.fabric.tasks.deploy import task_deploy
-from config.fabric.tasks.generate_sudoers import task_generate_sudoers
-from config.fabric.tasks.setup import task_setup
+from config.fabric.tasks.clean_releases import __task_clean_releases
+from config.fabric.tasks.clean_source import __task_clean_source
+from config.fabric.tasks.deploy import __task_deploy
+from config.fabric.tasks.generate_sudoers import __task_generate_sudoers
+from config.fabric.tasks.setup import __task_setup
 
 env.project_url = 'git@github.com:deployer/django-app.git'
 env.branch = 'master'
@@ -23,6 +25,8 @@ env.socket = f'/tmp/{env.app_name}.sock'
 env.pyenv = 'system'  # system or local
 env.pyenv_version = '3.6.0'
 
+env.keep_releases = 10
+
 __fabric_init()
 
 env.uploads = [
@@ -40,10 +44,8 @@ env.symlinks = [
 ]
 
 
-def deploy(): task_deploy()
-
-
-def setup(): task_setup()
-
-
-def generate_sudoers(): task_generate_sudoers()
+deploy = __task_deploy
+setup = __task_setup
+generate_sudoers = __task_generate_sudoers
+clean_source = __task_clean_source
+clean_releases = __task_clean_releases

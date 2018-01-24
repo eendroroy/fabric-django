@@ -6,7 +6,7 @@ from fabric.state import env
 
 
 @_contextmanager
-def virtualenv():
+def __virtualenv():
     run(f'[ -d {env.venv} ] && true || {env.pyenv_prefix} virtualenv {env.venv}')
     with cd(env.directory):
         with prefix(env.activate):
