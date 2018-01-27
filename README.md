@@ -1,6 +1,6 @@
 # fabric-django
 
-Django, uwsgi deploy template with fabric
+Django, uwsgi deploy template with fabric (Python => 3.5)
 
 [![Contributors](https://img.shields.io/github/contributors/eendroroy/fabric-django.svg)](https://github.com/eendroroy/fabric-django/graphs/contributors)
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/eendroroy/fabric-django/master.svg)](https://github.com/eendroroy/fabric-django)
