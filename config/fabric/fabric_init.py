@@ -1,3 +1,5 @@
+# -*- coding: future_fstrings -*-
+
 import datetime
 from fabric.state import env
 import os

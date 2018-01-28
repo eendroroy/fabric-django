@@ -13,6 +13,7 @@ env.hosts = ['192.168.33.10']
 env.app_port = '8000'
 env.uwsgi_process = 4
 env.uwsgi_threads = 2
+
 env.user = 'deployer'
 env.key_filename = '~/.ssh/id_rsa'
 env.deploy_key_name = 'deploy_key'

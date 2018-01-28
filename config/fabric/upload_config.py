@@ -1,3 +1,5 @@
+# -*- coding: future_fstrings -*-
+
 import tempfile
 
 from fabric.operations import put

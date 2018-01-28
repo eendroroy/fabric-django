@@ -1,3 +1,5 @@
+# -*- coding: future_fstrings -*-
+
 from fabric.context_managers import cd
 from fabric.operations import run
 from fabric.state import env

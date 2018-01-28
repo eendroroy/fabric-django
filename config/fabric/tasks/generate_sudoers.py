@@ -1,3 +1,5 @@
+# -*- coding: future_fstrings -*-
+
 from fabric.operations import local
 from fabric.state import env
 

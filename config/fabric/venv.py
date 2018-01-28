@@ -1,3 +1,5 @@
+# -*- coding: future_fstrings -*-
+
 from contextlib import contextmanager as _contextmanager
 
 from fabric.context_managers import cd, prefix

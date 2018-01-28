@@ -1,3 +1,5 @@
+# -*- coding: future_fstrings -*-
+
 from fabric.state import env
 from jinja2 import Template
 
