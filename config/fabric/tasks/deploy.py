@@ -6,6 +6,7 @@ from fabric.operations import run
 from fabric.state import env
 
 from config.fabric.tasks.clean_releases import __task_clean_releases
+from config.fabric.tasks.restart_emperor import __task_restart_emperor
 from config.fabric.venv import __virtualenv
 
 
@@ -31,6 +32,6 @@ def __task_deploy():
     with cd(env.current_path):
         with __virtualenv():
             run(f'pip install -r {env.current_path}/requirements/prod.txt')
-            run('sudo service emperor restart')
 
+    __task_restart_emperor()
     __task_clean_releases()

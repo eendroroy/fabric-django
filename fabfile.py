@@ -5,6 +5,8 @@ from config.fabric.tasks.clean_releases import __task_clean_releases
 from config.fabric.tasks.clean_source import __task_clean_source
 from config.fabric.tasks.deploy import __task_deploy
 from config.fabric.tasks.generate_sudoers import __task_generate_sudoers
+from config.fabric.tasks.restart_emperor import __task_restart_emperor
+from config.fabric.tasks.restart_nginx import __task_restart_nginx
 from config.fabric.tasks.setup import __task_setup
 
 env.project_url = 'git@github.com:deployer/django-app.git'
@@ -50,3 +52,5 @@ setup = __task_setup
 generate_sudoers = __task_generate_sudoers
 clean_source = __task_clean_source
 clean_releases = __task_clean_releases
+restart_nginx = __task_restart_nginx
+restart_emperor = __task_restart_emperor
