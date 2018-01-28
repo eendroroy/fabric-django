@@ -1,2 +1,3 @@
+future-fstrings
 Fabric3
 jinja2
