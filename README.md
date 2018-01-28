@@ -1,6 +1,8 @@
 # fabric-django
 
-Django, uwsgi deploy template with fabric (Python => 3.5)
+Django, uwsgi deploy template with fabric (Python 3.4+)
+
+_Note: python 3.4 requires `future-fstrings` to be installed._
 
 [![Contributors](https://img.shields.io/github/contributors/eendroroy/fabric-django.svg)](https://github.com/eendroroy/fabric-django/graphs/contributors)
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/eendroroy/fabric-django/master.svg)](https://github.com/eendroroy/fabric-django)
