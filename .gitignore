@@ -36,3 +36,4 @@ dist/
 .vagrant/
 *.log
 vagrant_deploy_key
+tmp/*
