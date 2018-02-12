@@ -13,15 +13,21 @@ from config.fabric.venv import __virtualenv
 def __task_deploy():
     if exists(env.source_path):
         with cd(env.source_path):
+            if env.deploy_key:
+                run(
+                    f'exec ssh-agent bash -c "ssh-add {env.deploy_key} && '
+                    f'git fetch origin +refs/heads/*:refs/heads/* --prune"'
+                )
+            else:
+                run(f'git fetch origin +refs/heads/*:refs/heads/* --prune')
+    else:
+        if env.deploy_key:
             run(
                 f'exec ssh-agent bash -c "ssh-add {env.deploy_key} && '
-                f'git fetch origin +refs/heads/*:refs/heads/* --prune"'
+                f'git clone --bare {env.project_url} {env.source_path}"'
             )
-    else:
-        run(
-            f'exec ssh-agent bash -c "ssh-add {env.deploy_key} && '
-            f'git clone --bare {env.project_url} {env.source_path}"'
-        )
+        else:
+            run(f'git clone --bare {env.project_url} {env.source_path}')
 
     with cd(env.source_path):
         run(f'mkdir -p {env.release_path}/{env.release_name}')
@@ -31,7 +37,7 @@ def __task_deploy():
 
     with cd(env.current_path):
         with __virtualenv():
-            run(f'pip install -r {env.current_path}/requirements/prod.txt')
+            run(f'pip install -r {env.current_path}/{env.requirements_file}')
 
     __task_restart_emperor()
     __task_clean_releases()

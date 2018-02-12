@@ -13,4 +13,3 @@ def __task_setup():
     __create_symlinks()
     run('sudo systemctl daemon-reload')
     __task_restart_nginx()
-    __task_restart_emperor()

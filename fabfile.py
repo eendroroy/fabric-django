@@ -18,10 +18,10 @@ env.uwsgi_threads = 2
 
 env.user = 'deployer'
 env.key_filename = '~/.ssh/id_rsa'
-env.deploy_key_name = 'deploy_key'
-env.forward_agent = True
+env.deploy_key_name = None
 
 env.app_name = 'django-app'
+env.requirements_file = 'requirements.txt'
 
 env.socket = f'/tmp/{env.app_name}.sock'
 

@@ -6,7 +6,10 @@ import os
 
 
 def __fabric_init():
-    env.deploy_key = f'/home/{env.user}/.ssh/{env.deploy_key_name}'
+    try:
+        env.deploy_key = f'/home/{env.user}/.ssh/{env.deploy_key_name}'
+    except AttributeError:
+        env.deploy_key = None
 
     env.directory = f'/home/{env.user}/apps/{env.app_name}'
     env.release_path = f'{env.directory}/releases'
